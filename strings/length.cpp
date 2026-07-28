@@ -14,7 +14,7 @@ int lengthofwords(vector<string> &words){
 
 int main(){
     string s ; cout<<"Enter the word: "; getline(cin,s);
-    cout<<s<<" ";
+    
     
     vector<string> words;
     string word;
