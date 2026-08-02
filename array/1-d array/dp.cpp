@@ -1,0 +1,31 @@
+#include <ios>
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+bool predictwinner(vector<int> &nums){
+    int n=nums.size();
+    if(n==0) return true;
+    vector<int> dp(n);
+    for(int i=n-1; i>=0; --i){
+        dp[i]=nums[i];
+        for(int j=i+1; j<n; j++){
+            dp[j]=max(nums[i]-dp[j],nums[j]-dp[j-1]);
+        }
+    }
+    return dp[n-1]>=0;
+}
+
+int main(){
+    int n; cout<<"Enter the size: "; cin>>n;
+    vector<int> nums;
+    for(int i=0; i<n; i++){
+        int ele; cout<<"Enter the elements: "; cin>>ele;
+        nums.push_back(ele);
+    }
+
+    bool result = predictwinner(nums);
+    cout<<boolalpha<<result<<" ";
+}
