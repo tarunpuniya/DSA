@@ -1,4 +1,5 @@
 #include<iostream>
+
 using namespace std;
 
 class node{
@@ -13,10 +14,7 @@ class node{
 
     node*removemiddle(node*head){
         if(head==nullptr) return nullptr;
-        if(head->next==nullptr){
-            
-            return nullptr;
-        }
+        if(head->next==nullptr) return nullptr;
 
         if(head->next->next==nullptr){
             delete head->next;
@@ -31,11 +29,11 @@ class node{
             temp=temp->next;
         }
         int mid = count/2;
-
         node*prev = head;
         for(int i=0; i<mid-1; i++){
             prev=prev->next;
         }
+
         node*del=prev->next;
         prev->next=del->next;
         delete del;
@@ -43,30 +41,42 @@ class node{
     }
 };
 
-
 int main(){
-    node*n = new node(1);
-    node*m = new node(3);
-    node*o = new node(4);
-    node*p = new node(7);
-    node*q = new node(1);
-    node*r = new node(2);
-    node*s = new node(6);
+    int n; cout<<"Enter the number of nodes:  "; cin>>n;
+    node*head=nullptr;
+    node*tail=nullptr;
 
-    node*head = n;
-    n->next=m;
-    m->next=o;
-    o->next=p;
-    p->next=q;
-    q->next=r;
-    r->next=s;
+    for(int i=0; i<n; i++){
+        int value; cout<<"Enter the value of node:  "; cin>>value;
+        node*newnode=new node(value);
+        if(head==nullptr){
+            head=newnode;
+            tail=newnode;
+        }else{
+            tail->next=newnode;
+            tail=newnode;
+        }
+    }
 
-    head=head->removemiddle(head);
+    // Print original linked list
+    cout<<"Original linked list:  ";
     node*temp=head;
     while(temp!=nullptr){
         cout<<temp->value<<" ";
         temp=temp->next;
     }
-    return 0;
-}
 
+    // Linked list after removing the middle node
+    cout<<"\nLinked list after removing the middle node:  ";
+    if(head!=nullptr){
+        head=head->removemiddle(head);
+    }
+    temp=head;
+    while(temp!=nullptr){
+        cout<<temp->value<<" ";
+        temp=temp->next;
+    }
+
+    return 0;
+
+}
