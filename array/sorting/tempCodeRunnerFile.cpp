@@ -1,4 +1,4 @@
-void merge(int arr[],int array[],int l,int mid, int r){
+// void merge(int arr[],int array[],int l,int mid, int r){
 //     int a[an];
 //     int b[bn];
 
