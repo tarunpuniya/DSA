@@ -1,0 +1,64 @@
+# ===========================
+# Compiled files
+# ===========================
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.lib
+
+# ===========================
+# Build folders
+# ===========================
+build/
+Debug/
+Release/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+Makefile
+
+# ===========================
+# VS Code
+# ===========================
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+
+# ===========================
+# Temporary files
+# ===========================
+tempCodeRunnerFile.cpp
+*.tmp
+*.log
+
+# ===========================
+# Operating System
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Python (if you add ML code later)
+# ===========================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# ===========================
+# Jupyter
+# ===========================
+.ipynb_checkpoints/
+
+# ===========================
+# Misc
+# ===========================
+*.bak
+*.swp
