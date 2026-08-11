@@ -60,6 +60,26 @@ node*insertatk(node*head,int el,int k){
     return head;
 }
 
+node*insertbeforevalue(node*head,int els , int vals){
+    if(head==nullptr) return nullptr;
+    if(head->value==vals){
+        node*newnode=new node(els);
+        newnode->next=head;
+        return newnode;
+    }
+    node*temp=head;
+    while(temp->next!=nullptr){
+        if(temp->next->value==vals){
+            node*x=new node(els);
+            x->next=temp->next;
+            temp->next=x;
+            break;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
+
 int main(){
     int n; std::cout<<"Enter the number of nodes:  "; std::cin>>n;
     node*head=nullptr;
@@ -99,6 +119,16 @@ int main(){
     int el; std::cout<<"Enter the el: "; std::cin>>el;
     int k; std::cout<<"Enter k: "; std::cin>>k;
     head=insertatk(head,el,k);
+    temp=head;
+    while(temp!=nullptr){
+        std::cout<<temp->value<<" ";
+        temp=temp->next;
+    }
+
+    std::cout<<std::endl;
+    int els; std::cout<<"Enter the els: "; std::cin>>els;
+    int vals; std::cout<<"Enter vals: "; std::cin>>vals;
+    head=insertatk(head,els,vals);
     temp=head;
     while(temp!=nullptr){
         std::cout<<temp->value<<" ";
