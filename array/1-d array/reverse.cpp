@@ -8,7 +8,7 @@ int main(){
         cout<<arr[i]<<" ";
     }
 
-    reverse this array
+   
     int start = 0;
     int end = n-1;
     cout<<endl;
