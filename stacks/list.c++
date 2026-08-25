@@ -60,19 +60,15 @@ class stack{
 };
 
 int main() {
-
     stack s(5);
-
     s.push(10);
     s.push(20);
     s.push(30);
 
     std::cout << s.getTop() << std::endl;
-
     s.pop();
 
     std::cout << s.getTop() << std::endl;
-
     s.pop();
 
     std::cout << s.getTop() << std::endl;

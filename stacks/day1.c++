@@ -17,5 +17,12 @@ int main(){
     }else{
         std::cout<<"Stack is not empty: ";
     }
+    std::cout<<std::endl;
+    while(!s.empty()){
+        int current = s.top();
+        s.pop();
+        std::cout<<current<<" ";
+
+    }
 }
 
